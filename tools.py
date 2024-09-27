@@ -1,3 +1,3 @@
 print("NTM")
 
-c = "ntm Roman"
+c = "jtm Roman"
