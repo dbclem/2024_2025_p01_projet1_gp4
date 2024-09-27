@@ -20,3 +20,92 @@ assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 def bin_to_hex (ask_for_the_init_base,ask_for_the_target_base):
     return ()
 #combien de fois rentre 16**2 dans x puis cmb de fois rentre 16**1 dans 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def ask_for_the_init_number() : 
+    return input(ask_for_init_number_text)
+
+def ask_for_the_init_base() : 
+    return input(ask_for_init_base_text)
+
+
+def ask_for_the_target_base() :
+    return input(ask_for_target_base_text)
+
