@@ -86,8 +86,20 @@ assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
 
+def is_number_in_chain(chain) :
+    for n in chain :
+        if n in number :
+            return True 
+
 def ask_for_the_init_number() : 
-    return input(ask_for_init_number_text)
+    init_nb_choise = input(str(ask_for_init_number_text))
+    while True :
+        if is_number_in_chain(init_nb_choise):
+            print(f"vous avez renter : {init_nb_choise}")
+            return False, init_nb_choise
+            
+        else :
+            init_nb_choise = input(reask_for_init_number_text) 
 
 def ask_for_the_init_base() : 
     return input(ask_for_init_base_text)
