@@ -17,12 +17,6 @@ def do_the_job ():
 
 
 
-def bin_to_hex (ask_for_the_init_base,ask_for_the_target_base):
-    return ()
-#combien de fois rentre 16**2 dans x puis cmb de fois rentre 16**1 dans x puis combien defois rentre 16**0 dans x 
-
-
-
 
 
 
@@ -64,11 +58,14 @@ def ask_for_the_init_base() :
 def is_a_valid_base(chain):
     return chain in base 
 
-ask_for_the_init_base()
 
 
 
 def ask_for_the_target_base() :
-    return input(ask_for_target_base_text)
+    target_base = input(ask_for_target_base_text)
+    while not (is_a_valid_base(target_base)) == True:
+        target_base = input(ask_again_for_target_base_text)
+    return target_base
+    
 
 
