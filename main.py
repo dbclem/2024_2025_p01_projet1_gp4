@@ -31,7 +31,7 @@ def do_the_job ():
 
 
 def check_char_number_validity(char):
-    return char in hex_number_valid_char
+    return char in hex_number_valid_chars
 
 def is_a_valid_number(chain): 
     i = 0
