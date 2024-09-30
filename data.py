@@ -1,5 +1,3 @@
-from main import *
-from tools import * 
 
 ask_for_init_number_text = "Entrez le numbre que vous voulez transformer : "
 ask_again_for_init_number_text = "un nombre svp : "
