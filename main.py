@@ -55,14 +55,11 @@ def ask_for_the_init_number() :
     return init_number
 
 
-# def ask_for_the_init_base() : 
-#     return input(ask_for_init_base_text)
+def ask_for_the_init_base() : 
+    return input(ask_for_init_base_text)
 
 
-# def ask_for_the_target_base() :
-#     return input(ask_for_target_base_text)
+def ask_for_the_target_base() :
+    return input(ask_for_target_base_text)
 
-
-init_number = ask_for_the_init_number()
-print(init_number)
 
