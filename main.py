@@ -36,68 +36,8 @@ def bin_to_hex (ask_for_the_init_base,ask_for_the_target_base):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def check_char_number_validity(char):
     return char in hex_number_valid_char
-
 
 def is_a_valid_number(chain): 
     i = 0
@@ -109,15 +49,20 @@ def is_a_valid_number(chain):
 
 
 def ask_for_the_init_number() : 
-    init_number = input(ask_for_init_number_text)
+    init_number = input(ask_for_init_number_text) 
     while not (is_a_valid_number(init_number)) == True:
         init_number = input(ask_again_for_init_number_text)
     return init_number
 
 
-def ask_for_the_init_base() : 
-    return input(ask_for_init_base_text)
+# def ask_for_the_init_base() : 
+#     return input(ask_for_init_base_text)
 
 
-def ask_for_the_target_base() :
-    return input(ask_for_target_base_text)
+# def ask_for_the_target_base() :
+#     return input(ask_for_target_base_text)
+
+
+init_number = ask_for_the_init_number()
+print(init_number)
+
