@@ -13,7 +13,15 @@ def do_the_job ():
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
 
 
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
+
+
+def bin_to_hex (ask_for_the_init_base,ask_for_the_target_base):
+    return ()
+#combien de fois rentre 16**2 dans x puis cmb de fois rentre 16**1 dans x puis combien defois rentre 16**0 dans x 
+
+
 
 
 
@@ -105,8 +113,6 @@ def ask_for_the_init_number() :
     while not (is_a_valid_number(init_number)) == True:
         init_number = input(ask_again_for_init_number_text)
     return init_number
-
-
 
 
 def ask_for_the_init_base() : 
