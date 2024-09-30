@@ -13,7 +13,7 @@ def do_the_job ():
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
 
 
-assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
 
@@ -94,13 +94,28 @@ assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
 
-def verifation_requete (): 
-    
-    pass
+
+
+
+
+def check_char_number_validity(char):
+    return char in hex_number_valid_char
+
+
+def is_a_valid_number(chain): 
+    i = 0
+    is_a_valid_char = True
+    while is_a_valid_char == True and i <= len(chain) - 1:
+        is_a_valid_char = check_char_number_validity(chain[i])
+        i = i + 1
+    return is_a_valid_char
 
 
 def ask_for_the_init_number() : 
-    return input(ask_for_init_number_text)
+    init_number = input(ask_for_init_number_text)
+    while not (is_a_valid_number(init_number)) == True:
+        init_number = input(ask_again_for_init_number_text)
+    return init_number
 
 
 def ask_for_the_init_base() : 
@@ -114,7 +129,7 @@ def ask_for_the_target_base() :
 
 
 
-
+ask_for_the_init_number()
 
 
 
