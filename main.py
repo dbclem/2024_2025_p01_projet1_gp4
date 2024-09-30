@@ -87,17 +87,6 @@ def do_the_job ():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 def check_char_number_validity(char):
     return char in hex_number_valid_char
 
@@ -118,22 +107,11 @@ def ask_for_the_init_number() :
     return init_number
 
 
+
+
 def ask_for_the_init_base() : 
     return input(ask_for_init_base_text)
 
 
 def ask_for_the_target_base() :
     return input(ask_for_target_base_text)
-
-
-
-
-
-ask_for_the_init_number()
-
-
-
-
-
-
-
