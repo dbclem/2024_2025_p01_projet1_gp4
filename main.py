@@ -19,8 +19,7 @@ assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 def bin_to_hex (ask_for_the_init_base,ask_for_the_target_base):
     return ()
-#combien de fois rentre 16**2 dans x puis cmb de fois rentre 16**1 dans 
-
+#combien de fois rentre 16**2 dans x puis cmb de fois rentre 16**1 dans x puis combien defois rentre 16**0 dans x 
 
 
 
