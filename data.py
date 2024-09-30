@@ -16,6 +16,10 @@ hex_number_valid_chars = dec_number_valid_chars\
                         + ["A", "B", "C", "D", "E", "F"]\
                         + ["a", "b", "c", "d", "e", "f"]
 
-base =  ["b", "bin", "binaire", "2"]\
-        + ["d", "dec", "decimal", "10"]\
-        + ["h", "hex", "hexadecimal", "16"]
+
+is_bin_writing = ["b", "bin", "binaire", "2"]
+is_dec_writing = ["d", "dec", "decimal", "10"]
+is_hex_writing = ["h", "hex", "hexadecimal", "16"]
+base =  is_bin_writing\
+        + is_dec_writing\
+        + is_hex_writing
