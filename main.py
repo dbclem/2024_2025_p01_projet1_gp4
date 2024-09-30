@@ -13,7 +13,7 @@ def do_the_job ():
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
 
 
-assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
 
@@ -56,7 +56,16 @@ def ask_for_the_init_number() :
 
 
 def ask_for_the_init_base() : 
-    return input(ask_for_init_base_text)
+    init_base = input(ask_for_init_base_text)
+    while not (is_a_valid_base(init_base)) == True:
+        init_base = input(ask_again_for_init_base_text)
+    return init_base
+
+def is_a_valid_base(chain):
+    return chain in base 
+
+ask_for_the_init_base()
+
 
 
 def ask_for_the_target_base() :
