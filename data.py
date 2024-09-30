@@ -1,4 +1,3 @@
-
 ask_for_init_number_text = "Entrez le numbre que vous voulez transformer : "
 ask_again_for_init_number_text = "un nombre svp : "
 ask_for_init_base_text = "Entrez la base que vous voulez utiliser : "
