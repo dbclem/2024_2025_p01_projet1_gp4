@@ -54,14 +54,14 @@ def ask_for_the_init_base() :
     init_base = input(ask_for_init_base_text)
     while not (is_a_valid_base(init_base)) == True:
         init_base = input(ask_again_for_init_base_text)
-    return init_base
+    return init_base # --> ici on voit a veréfié la validité de la base, mais l'ordi ne la connait
 
 
 def ask_for_the_target_base() :
     target_base = input(ask_for_target_base_text)
     while not (is_a_valid_base(target_base)) == True:
         target_base = input(ask_again_for_target_base_text)
-    return target_base
+    return target_base # --> ici on voit a veréfié la validité de la target base, mais l'ordi ne la connait
 
 
 def is_bin(chain):
@@ -77,30 +77,39 @@ def interpret_init_base (): #interpret l'init_base --> donc savoir si c'est un b
     init_base_verify = 0
     test_for_init_base = ask_for_the_init_base()
     if is_bin(test_for_init_base) :
-        return init_base_verify == 2
+        init_base_verify = 2
+        return init_base_verify
     
     elif is_dec(test_for_init_base):
-        return init_base_verify == 10
+        init_base_verify = 10 
+        return init_base_verify
     
     elif is_hex(test_for_init_base):
-        return init_base_verify == 16
+        init_base_verify = 16 
+        return init_base_verify 
 
 
 def interpret_target_base (): #interpret la target_base --> donc savoir si c'est un bin / dec / hex
     target_base_verify = 0
     test_for_target_base = ask_for_the_target_base()
     if is_bin(test_for_target_base) :
-        return target_base_verify == 2
+        target_base_verify = 2
+        return target_base_verify
     
     elif is_dec(test_for_target_base):
-        return target_base_verify == 10
+        target_base_verify = 10
+        return target_base_verify
     
     elif is_hex(test_for_target_base):
-        return target_base_verify == 16
+        target_base_verify = 16 
+        return target_base_verify
 
 
 
-test = ask_for_the_init_number()+ ", " + ask_for_the_init_base()+ ", " + ask_for_the_target_base()
-print(test)
+
+print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
+    + " , en base : " + str(interpret_init_base()) \
+    + " , et vous visez la base : " + str(interpret_target_base()))
 
 #tout est reconnu et est pres a etre utilisé dans les calcules 
+
