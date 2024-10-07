@@ -15,7 +15,19 @@ def do_the_job ():
 #assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
+# fonction pour dec to bin and hex
+def rest_number (n):
+    return n % 2
 
+def dec_to_bin (init_number) :
+    bin_number = '0'
+    while init_number > 0:
+        bin_number = str(rest_number(init_number)) + bin_number
+        init_number = init_number // 2
+    return bin_number
+
+
+#fin des fonctions dec to bin and hex
 
 
 
@@ -103,7 +115,6 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
     elif is_hex(test_for_target_base):
         target_base_verify = 16 
         return target_base_verify
-
 
 
 
