@@ -1,6 +1,5 @@
 from math import*
 
-
 def rest_number (n):
     return n % 2
 
