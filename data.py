@@ -23,3 +23,7 @@ is_hex_writing = ["h", "hex", "hexadecimal", "16"]
 base =  is_bin_writing\
         + is_dec_writing\
         + is_hex_writing
+
+def need_transformation_hex(num):
+    if num > 9 : 
+        return num 

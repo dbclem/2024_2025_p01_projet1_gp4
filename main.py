@@ -16,30 +16,18 @@ def do_the_job ():
 
 
 # fonction pour dec to bin and hex
-def rest_number (n):
-    return n % 2
+def rest_number_of_base (n):
+    return n % interpret_target_base () #--> reprendre ici probleme 
 
-def dec_to_bin (init_number) :
+def dec_to_bin_or_hex (init_number) :
     bin_number = []
     while init_number > 0:
-        bin_number.append(rest_number(init_number))
-        init_number = init_number // 2
+        bin_number.append(rest_number_of_base(init_number))
+        init_number = init_number // interpret_target_base()
         bin_number.reverse()
     return bin_number
 
-
-def dec_to_hex_calcul (ask_for_the_init_number):
-     return ask_for_the_init_number % 16
-
-
-def dec_to_hex (init_number):
-    hex_number = []
-    while init_number > 0 :
-        hex_number.append(dec_to_hex_calcul(init_number))
-        init_number =  init_number // 2    
-    hex_number.reverse()      
-    return hex_number
-
+print(dec_to_bin_or_hex(91))
 
 def hex(num):
     if num == 10 :
@@ -149,9 +137,9 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
 
 
 
-print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
-    + " , en base : " + str(interpret_init_base()) \
-    + " , et vous visez la base : " + str(interpret_target_base()))
+# print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
+#     + " , en base : " + str(interpret_init_base()) \
+#     + " , et vous visez la base : " + str(interpret_target_base()))
 
 
 #tout est reconnu et est pres a etre utilisé dans les calcules 
