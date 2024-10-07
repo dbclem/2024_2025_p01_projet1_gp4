@@ -122,5 +122,6 @@ print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
     + " , en base : " + str(interpret_init_base()) \
     + " , et vous visez la base : " + str(interpret_target_base()))
 
+
 #tout est reconnu et est pres a etre utilisé dans les calcules 
 

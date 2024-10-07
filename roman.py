@@ -12,4 +12,3 @@ def dec_to_bin (init_number) :
     return bin_number
 
 print (dec_to_bin(91))
-
