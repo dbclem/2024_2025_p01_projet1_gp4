@@ -20,15 +20,46 @@ def rest_number (n):
     return n % 2
 
 def dec_to_bin (init_number) :
-    bin_number = '0'
+    bin_number = []
     while init_number > 0:
-        bin_number = str(rest_number(init_number)) + bin_number
+        bin_number.append(rest_number(init_number))
         init_number = init_number // 2
+        bin_number.reverse()
     return bin_number
 
 
-#fin des fonctions dec to bin and hex
+def dec_to_hex_calcul (ask_for_the_init_number):
+     return ask_for_the_init_number % 16
 
+
+def dec_to_hex (init_number):
+    hex_number = []
+    while init_number > 0 :
+        hex_number.append(dec_to_hex_calcul(init_number))
+        init_number =  init_number // 2    
+    hex_number.reverse()      
+    return hex_number
+
+
+def hex(num):
+    if num == 10 :
+        return "A"
+    elif num == 11 :
+        return "B"
+    elif num == 12 :
+        return "C"
+    elif num == 13 :
+        return "D"
+    elif num == 14 :
+        return "E"
+    elif num == 15 :
+        return "F"
+    
+
+def numbers_dec_transformation_hex (hex_number):
+    pass
+
+#fin des fonctions dec to bin and hex
 
 
 
