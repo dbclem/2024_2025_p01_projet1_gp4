@@ -2,9 +2,27 @@ from data import *
 from tools import * 
 
 def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
-    pass
-    target_number = None
+    if target_number == 2 and target_base_verify == 10:
+        target_number = bin_to_dec()
+    elif target_number == 2 and target_base_verify == 16:
+        target_number = bin_to_hex()
+
+    elif target_number == 10 and target_base_verify == 2:
+        target_number = dec_to_bin()
+    elif target_number == 10 and target_base_verify == 16:
+        target_number = dec_to_hex()
+
+    elif target_number == 16 and target_base_verify == 2:
+        target_number = hex_to_bin()
+    elif target_number == 16 and target_base_verify == 10:
+        target_number = hex_to_dec() 
+           
     return target_number
+
+#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
+
+
 
 def do_the_job ():
     init_number = ask_for_the_init_number()
@@ -12,7 +30,7 @@ def do_the_job ():
     target_base = ask_for_the_target_base()
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
 
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
 
 
 # fonction pour dec to bin and hex
