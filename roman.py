@@ -4,14 +4,14 @@ def rest_number (n):
     return n % 2
 
 
-# def dec_to_bin (init_number) :
-#     bin_number = '0'
-#     while init_number > 0:
-#         bin_number = bin_number + str(rest_number(init_number))
-#         init_number = init_number // 2
-#     return bin_number
+def dec_to_bin (init_number) :
+    bin_number = '0'
+    while init_number > 0:
+        bin_number = bin_number + str(rest_number(init_number))
+        init_number = init_number // 2
+    return bin_number
 
-# print (dec_to_bin(17))
+print (dec_to_bin(255))
 
 
 # def bin_to_dec (n, b):
@@ -50,4 +50,3 @@ def rest_number (n):
 
 
 
-print (bin_to_dec(10101))
