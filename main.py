@@ -47,19 +47,7 @@ def dec_to_bin_or_hex (init_number) :
 
 print(dec_to_bin_or_hex(91))
 
-def hex(num):
-    if num == 10 :
-        return "A"
-    elif num == 11 :
-        return "B"
-    elif num == 12 :
-        return "C"
-    elif num == 13 :
-        return "D"
-    elif num == 14 :
-        return "E"
-    elif num == 15 :
-        return "F"
+
     
 
 def numbers_dec_transformation_hex (hex_number):
