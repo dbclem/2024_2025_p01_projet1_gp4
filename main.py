@@ -2,9 +2,27 @@ from data import *
 from tools import * 
 
 def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
-    pass
-    target_number = None
+    if target_number == 2 and target_base_verify == 10:
+        target_number = bin_to_dec()
+    elif target_number == 2 and target_base_verify == 16:
+        target_number = bin_to_hex()
+
+    elif target_number == 10 and target_base_verify == 2:
+        target_number = dec_to_bin()
+    elif target_number == 10 and target_base_verify == 16:
+        target_number = dec_to_hex()
+
+    elif target_number == 16 and target_base_verify == 2:
+        target_number = hex_to_bin()
+    elif target_number == 16 and target_base_verify == 10:
+        target_number = hex_to_dec() 
+           
     return target_number
+
+#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
+
+
 
 def do_the_job ():
     init_number = ask_for_the_init_number()
@@ -12,23 +30,42 @@ def do_the_job ():
     target_base = ask_for_the_target_base()
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
 
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
 
 
 # fonction pour dec to bin and hex
-def rest_number (n):
-    return n % 2
+def rest_number_of_base (n):
+    return n % interpret_target_base () #--> reprendre ici probleme 
 
-def dec_to_bin (init_number) :
-    bin_number = '0'
+def dec_to_bin_or_hex (init_number) :
+    bin_number = []
     while init_number > 0:
-        bin_number = str(rest_number(init_number)) + bin_number
-        init_number = init_number // 2
+        bin_number.append(rest_number_of_base(init_number))
+        init_number = init_number // interpret_target_base()
+        bin_number.reverse()
     return bin_number
 
+print(dec_to_bin_or_hex(91))
+
+def hex(num):
+    if num == 10 :
+        return "A"
+    elif num == 11 :
+        return "B"
+    elif num == 12 :
+        return "C"
+    elif num == 13 :
+        return "D"
+    elif num == 14 :
+        return "E"
+    elif num == 15 :
+        return "F"
+    
+
+def numbers_dec_transformation_hex (hex_number):
+    pass
 
 #fin des fonctions dec to bin and hex
-
 
 
 
@@ -118,9 +155,9 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
 
 
 
-print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
-    + " , en base : " + str(interpret_init_base()) \
-    + " , et vous visez la base : " + str(interpret_target_base()))
+# print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
+#     + " , en base : " + str(interpret_init_base()) \
+#     + " , et vous visez la base : " + str(interpret_target_base()))
 
 
 #tout est reconnu et est pres a etre utilisé dans les calcules 
