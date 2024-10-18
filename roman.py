@@ -7,7 +7,7 @@ def rest_number (n):
 # def dec_to_bin (init_number) :
 #     bin_number = '0'
 #     while init_number > 0:
-#         bin_number = str(rest_number(init_number)) + bin_number
+#         bin_number = bin_number + str(rest_number(init_number))
 #         init_number = init_number // 2
 #     return bin_number
 
@@ -33,3 +33,21 @@ def rest_number (n):
 # print (decimal)
 
 
+# def reverse_number(m):
+#     cpt = 
+#     for n in m:
+#         cpt = 0 + cpt
+
+# def bin_to_dec (init_number) :
+#     dec_number = 0
+#     for n in init_number:
+#         if int(n) > 0:
+#             dec_number = 2**[n]
+#         else :
+#             dec_number = 0
+#         dec_number += dec_number
+#     return dec_number
+
+
+
+print (bin_to_dec(10101))
