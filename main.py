@@ -32,28 +32,43 @@ def do_the_job ():
 
 
 
-
-# fonction pour dec to bin and hex
-def rest_number_of_base (n):
-    return n % interpret_target_base () #--> reprendre ici probleme 
-
-def dec_to_bin_or_hex (init_number) :
-    bin_number = []
+def dec_to_hex (init_number):
+    hex_number = ""
+    hex_chars = "0123456789ABCDEF"
     while init_number > 0:
-        bin_number.append(rest_number_of_base(init_number))
-        init_number = init_number // interpret_target_base()
-        bin_number.reverse()
+        point_hex_char = init_number % 16
+        hex_number = hex_chars[point_hex_char] + hex_number
+        init_number = init_number // 16
+    return hex_number
+
+def bin_to_hex (init_number) : 
+    return dec_to_hex(bin_to_dec(init_number))
+
+def bin_to_dec(init_number):
+    dec_number = 0
+    for i in range(len(init_number)):
+        bin_number = int(init_number[len(init_number) - 1 - i])  
+        dec_number = dec_number + bin_number * (2 ** i)  
+    return dec_number
+
+def dec_to_bin(init_number):
+    bin_number = ""
+    while init_number > 0 :
+        reste = init_number % 2
+        bin_number = str(reste) + bin_number
+        init_number = init_number // 2
     return bin_number
 
-print(dec_to_bin_or_hex(91))
+def dec_to_hex (init_number): 
+    return bin_to_hex(dec_to_bin(init_number))
+
+def hex_to_bin (init_number) :
+    return hex_to_dec(dec_to_bin(init_number))
+
+def hex_to_dec (init_number) :
+    pass 
 
 
-    
-
-def numbers_dec_transformation_hex (hex_number):
-    pass
-
-#fin des fonctions dec to bin and hex
 
 
 
