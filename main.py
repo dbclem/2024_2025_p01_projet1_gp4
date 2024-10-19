@@ -59,14 +59,19 @@ def dec_to_bin(init_number):
         init_number = init_number // 2
     return bin_number
 
+def hex_to_dec (init_number) :
+    dec_number = 0
+    for i in range(len(init_number)):
+        hex_number = int(init_number[len(init_number) - 1 - i])  
+        dec_number = dec_number + hex_number * (16 ** i)  
+    return dec_number  #--> correction ici pas fini
+
 def dec_to_hex (init_number): 
     return bin_to_hex(dec_to_bin(init_number))
 
 def hex_to_bin (init_number) :
     return hex_to_dec(dec_to_bin(init_number))
 
-def hex_to_dec (init_number) :
-    pass 
 
 
 
