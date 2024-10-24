@@ -41,8 +41,7 @@ def dec_to_hex (init_number):
         init_number = init_number // 16
     return hex_number
 
-def bin_to_hex (init_number) : 
-    return dec_to_hex(bin_to_dec(init_number))
+
 
 def bin_to_dec(init_number):
     dec_number = 0
@@ -59,12 +58,37 @@ def dec_to_bin(init_number):
         init_number = init_number // 2
     return bin_number
 
-def hex_to_dec (init_number) :
-    dec_number = 0
-    for i in range(len(init_number)):
-        hex_number = int(init_number[len(init_number) - 1 - i])  
-        dec_number = dec_number + hex_number * (16 ** i)  
-    return dec_number  #--> correction ici pas fini
+
+
+
+def transforme_hex_number_to_dec_numbers (hex_number) : 
+    hex_number_transformed_in_liste = []
+    for i  in hex_number : 
+        if i in "0123456789" : 
+            hex_number_transformed_in_liste.append(int(i))
+        else : 
+            if i == "A" : 
+                hex_number_transformed_in_liste.append(10)
+            elif i == "B" : 
+                hex_number_transformed_in_liste.append(11)
+            elif i == "C" : 
+                hex_number_transformed_in_liste.append(12)
+            elif i == "D" : 
+                hex_number_transformed_in_liste.append(13)
+            elif i == "E" : 
+                hex_number_transformed_in_liste.append(14)
+            elif i == "F" : 
+                hex_number_transformed_in_liste.append(15)                
+    return hex_number_transformed_in_liste
+
+
+def hex_to_dec (init_number):
+    dec_number = 0 
+    hex_in_dec_chars = transforme_hex_number_to_dec_numbers(init_number)
+    for num in range(len(hex_in_dec_chars)):
+        hex_number = int(hex_in_dec_chars[len(hex_in_dec_chars) - 1 - num])  
+        dec_number = dec_number + hex_number * (16 ** num)
+    return dec_number
 
 def dec_to_hex (init_number): 
     return bin_to_hex(dec_to_bin(init_number))
@@ -72,7 +96,8 @@ def dec_to_hex (init_number):
 def hex_to_bin (init_number) :
     return hex_to_dec(dec_to_bin(init_number))
 
-
+def bin_to_hex (init_number) : 
+    return dec_to_hex(bin_to_dec(init_number))
 
 
 
