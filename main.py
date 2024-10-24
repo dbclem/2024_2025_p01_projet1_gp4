@@ -1,35 +1,6 @@
 from data import *
 from tools import * 
 
-def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
-    if target_number == 2 and target_base_verify == 10:
-        target_number = bin_to_dec()
-    elif target_number == 2 and target_base_verify == 16:
-        target_number = bin_to_hex()
-
-    elif target_number == 10 and target_base_verify == 2:
-        target_number = dec_to_bin()
-    elif target_number == 10 and target_base_verify == 16:
-        target_number = dec_to_hex()
-
-    elif target_number == 16 and target_base_verify == 2:
-        target_number = hex_to_bin()
-    elif target_number == 16 and target_base_verify == 10:
-        target_number = hex_to_dec() 
-           
-    return target_number
-
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
-
-
-
-
-def do_the_job ():
-    init_number = ask_for_the_init_number()
-    init_base = ask_for_the_init_base()
-    target_base = ask_for_the_target_base()
-    target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
-
 
 
 def dec_to_hex (init_number):
@@ -39,16 +10,7 @@ def dec_to_hex (init_number):
         point_hex_char = init_number % 16
         hex_number = hex_chars[point_hex_char] + hex_number
         init_number = init_number // 16
-    return hex_number
-
-
-
-def bin_to_dec(init_number):
-    dec_number = 0
-    for i in range(len(init_number)):
-        bin_number = int(init_number[len(init_number) - 1 - i])  
-        dec_number = dec_number + bin_number * (2 ** i)  
-    return dec_number
+    return hex_number#--> marche 
 
 def dec_to_bin(init_number):
     bin_number = ""
@@ -56,9 +18,18 @@ def dec_to_bin(init_number):
         reste = init_number % 2
         bin_number = str(reste) + bin_number
         init_number = init_number // 2
-    return bin_number
+    return bin_number #--> marche
 
 
+def bin_to_dec(init_number):
+    dec_number = 0
+    for i in range(len(init_number)):
+        bin_number = int(init_number[len(init_number) - 1 - i])  
+        dec_number = dec_number + bin_number * (2 ** i)  
+    return dec_number#--> marche
+
+def bin_to_hex (init_number) : 
+    return dec_to_hex(bin_to_dec(init_number)) #--> marche 
 
 
 def transforme_hex_number_to_dec_numbers (hex_number) : 
@@ -88,25 +59,10 @@ def hex_to_dec (init_number):
     for num in range(len(hex_in_dec_chars)):
         hex_number = int(hex_in_dec_chars[len(hex_in_dec_chars) - 1 - num])  
         dec_number = dec_number + hex_number * (16 ** num)
-    return dec_number
-
-def dec_to_hex (init_number): 
-    return bin_to_hex(dec_to_bin(init_number))
+    return dec_number#--> marche
 
 def hex_to_bin (init_number) :
-    return hex_to_dec(dec_to_bin(init_number))
-
-def bin_to_hex (init_number) : 
-    return dec_to_hex(bin_to_dec(init_number))
-
-
-
-
-
-
-
-
-
+    return hex_to_dec(dec_to_bin(init_number)) #--> marche
 
 
 def check_char_number_validity(char):
@@ -195,3 +151,34 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
 
 #tout est reconnu et est pres a etre utilisé dans les calcules 
 
+
+def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
+    if init_base_verify == 2 and target_base_verify == 10:
+        return bin_to_dec(init_number)
+    elif init_base_verify == 2 and target_base_verify == 16:
+        return bin_to_hex(init_number)
+
+    elif init_base_verify == 10 and target_base_verify == 2:
+        return dec_to_bin(init_number)
+    elif init_base_verify == 10 and target_base_verify == 16:
+        return dec_to_hex(init_number)
+
+    elif init_base_verify == 16 and target_base_verify == 2:
+        return hex_to_bin(init_number)
+    elif init_base_verify == 16 and target_base_verify == 10:
+        return hex_to_dec(init_number) 
+
+#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
+
+
+
+
+def do_the_job ():
+    init_number = ask_for_the_init_number()
+    init_base = ask_for_the_init_base()
+    target_base = ask_for_the_target_base()
+    target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
+    print(target_number)
+
+
+do_the_job()
