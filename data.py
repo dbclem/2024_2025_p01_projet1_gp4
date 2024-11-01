@@ -1,11 +1,11 @@
-ask_for_init_number_text = "Entrez le numbre que vous voulez transformer : "
+ask_for_init_number_text = "Entrez le nombre que vous voulez transformer : "
 ask_again_for_init_number_text = "Ce n'est pas un nombre ! " + ask_for_init_number_text
 
 
 ask_for_init_base_text = "Entrez la base que vous voulez utiliser : "
 ask_again_for_init_base_text = "Ce n'est pas une base connu, vous devez rentrer du binaire, du decimale, ou de l'hexadecimal. \n" + ask_for_init_base_text
 
-ask_for_target_base_text = "Entrez la base qeu vous voulez viser : "
+ask_for_target_base_text = "Entrez la base que vous voulez viser : "
 ask_again_for_target_base_text = "Ce n'est pas une base connu, vous devez rentrer du binaire, du decimale, ou de l'hexadecimal. \n" + ask_for_target_base_text
 
 
