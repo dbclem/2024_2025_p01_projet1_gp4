@@ -88,6 +88,7 @@ def is_a_valid_base(chain):
     return chain in base 
 
 
+
 def ask_for_the_init_base() : 
     init_base = input(ask_for_init_base_text)
     while not (is_a_valid_base(init_base)) == True:
@@ -143,15 +144,6 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
         return target_base_verify
 
 
-
-# print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
-#     + " , en base : " + str(interpret_init_base()) \
-#     + " , et vous visez la base : " + str(interpret_target_base()))
-
-
-#tout est reconnu et est pres a etre utilisé dans les calcules 
-
-
 def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
     if init_base_verify == 2 and target_base_verify == 10:
         return bin_to_dec(init_number)
@@ -167,8 +159,6 @@ def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verif
         return hex_to_bin(init_number)
     elif init_base_verify == 16 and target_base_verify == 10:
         return hex_to_dec(init_number) 
-
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
 
 
 
