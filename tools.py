@@ -36,17 +36,17 @@
 # print(f"Le nombre décimal {nombre_decimal} en binaire est : {nombre_binaire}")
 
 
-def bin_to_dec(init_number):
-    dec_number = 0
+# def bin_to_dec(init_number):
+#     dec_number = 0
 
 
-    for i in range(len(init_number)):
-        bit = int(init_number[len(init_number) - 1 - i])  # On parcourt la chaîne de droite à gauche
-        dec_number = dec_number + bit * (2 ** i)  # Ajoute la valeur décimale correspondante
+#     for i in range(len(init_number)):
+#         bit = int(init_number[len(init_number) - 1 - i])  # On parcourt la chaîne de droite à gauche
+#         dec_number = dec_number + bit * (2 ** i)  # Ajoute la valeur décimale correspondante
 
-    return dec_number
+#     return dec_number
 
-# Exemple d'utilisation
-nombre_binaire = "11111111"
-nombre_decimal = bin_to_dec(nombre_binaire)
-print(f"Le nombre binaire {nombre_binaire} en décimal est : {nombre_decimal}")
+# # Exemple d'utilisation
+# nombre_binaire = "11111111"
+# nombre_decimal = bin_to_dec(nombre_binaire)
+# print(f"Le nombre binaire {nombre_binaire} en décimal est : {nombre_decimal}")

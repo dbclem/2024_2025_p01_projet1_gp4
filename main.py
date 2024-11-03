@@ -62,7 +62,7 @@ def hex_to_dec (init_number):
     return dec_number#--> marche
 
 def hex_to_bin (init_number) :
-    return hex_to_dec(dec_to_bin(init_number)) #--> marche
+    return dec_to_bin(hex_to_dec(init_number)) #--> marche
 
 
 def check_char_number_validity(char):
@@ -86,6 +86,7 @@ def ask_for_the_init_number() :
 
 def is_a_valid_base(chain):
     return chain in base 
+
 
 
 def ask_for_the_init_base() : 
@@ -143,15 +144,6 @@ def interpret_target_base (): #interpret la target_base --> donc savoir si c'est
         return target_base_verify
 
 
-
-# print(f"Vous avez choisi le nombre : ", ask_for_the_init_number()\
-#     + " , en base : " + str(interpret_init_base()) \
-#     + " , et vous visez la base : " + str(interpret_target_base()))
-
-
-#tout est reconnu et est pres a etre utilisé dans les calcules 
-
-
 def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verify): 
     if init_base_verify == 2 and target_base_verify == 10:
         return bin_to_dec(init_number)
@@ -168,8 +160,6 @@ def bin_dec_hex_to_bin_dec_hex (init_number, init_base_verify, target_base_verif
     elif init_base_verify == 16 and target_base_verify == 10:
         return hex_to_dec(init_number) 
 
-#assert bin_dec_hex_to_bin_dec_hex("101", 2, 10) == "5"
-
 
 
 
@@ -178,7 +168,8 @@ def do_the_job ():
     init_base = ask_for_the_init_base()
     target_base = ask_for_the_target_base()
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
-    print(target_number)
+    print(target_number)# --> finir le fix
+    
 
 
 do_the_job()
