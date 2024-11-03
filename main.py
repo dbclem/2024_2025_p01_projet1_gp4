@@ -62,7 +62,7 @@ def hex_to_dec (init_number):
     return dec_number#--> marche
 
 def hex_to_bin (init_number) :
-    return hex_to_dec(dec_to_bin(init_number)) #--> marche
+    return dec_to_bin(hex_to_dec(init_number)) #--> marche
 
 
 def check_char_number_validity(char):
@@ -168,7 +168,8 @@ def do_the_job ():
     init_base = ask_for_the_init_base()
     target_base = ask_for_the_target_base()
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
-    print(target_number)
+    print(target_number)# --> finir le fix
+    
 
 
 do_the_job()
