@@ -168,7 +168,7 @@ def do_the_job ():
     init_base = interpret_init_base()
     target_base = interpret_target_base()
     target_number = bin_dec_hex_to_bin_dec_hex (init_number, init_base, target_base)
-    print(target_number)
+    print(f"Le nombre {init_number} en base {init_base} est {target_number} en base {target_base}")
 
 
 do_the_job()
