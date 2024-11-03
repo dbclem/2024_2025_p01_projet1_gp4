@@ -1,52 +1,48 @@
-
-# print(hex(255)[2:])
-# print(bin(255)[2:])
+from data import*
 
 
-# def decimal_to_hexadecimal(decimal_number):
-#     hexadecimal_number = ""
-#     hex_digits = "0123456789ABCDEF"
-
-#     while decimal_number > 0:
-#         remainder = decimal_number % 16
-#         hexadecimal_number = hex_digits[remainder] + hexadecimal_number
-#         decimal_number //= 16
-
-#     return hexadecimal_number
-
-# # Exemple d'utilisation
-# nombre_decimal = 31
-# nombre_hexadecimal = decimal_to_hexadecimal(nombre_decimal)
-# print(f"Le nombre décimal {nombre_decimal} en hexadécimal est : {nombre_hexadecimal}")
-
-
-# def decimal_to_binary(decimal_number):
-#     binary_number = ""
-
-#     while decimal_number > 0:
-#         remainder = decimal_number % 2  # Reste de la division par 2
-#         binary_number = str(remainder) + binary_number  # Ajoute le reste au début de la chaîne
-#         decimal_number //= 2  # Divise le nombre par 2
-
-#     return binary_number
-
-# # Exemple d'utilisation
-# nombre_decimal = 10
-# nombre_binaire = decimal_to_binary(nombre_decimal)
-# print(f"Le nombre décimal {nombre_decimal} en binaire est : {nombre_binaire}")
+def transforme_hex_number_to_dec_numbers (hex_number) : 
+    hex_number_transformed_in_liste = []
+    for i  in hex_number : 
+        if i in "0123456789" : 
+            hex_number_transformed_in_liste.append(int(i))
+        else : 
+            if i == "A" : 
+                hex_number_transformed_in_liste.append(10)
+            elif i == "B" : 
+                hex_number_transformed_in_liste.append(11)
+            elif i == "C" : 
+                hex_number_transformed_in_liste.append(12)
+            elif i == "D" : 
+                hex_number_transformed_in_liste.append(13)
+            elif i == "E" : 
+                hex_number_transformed_in_liste.append(14)
+            elif i == "F" : 
+                hex_number_transformed_in_liste.append(15)                
+    return hex_number_transformed_in_liste
 
 
-# def bin_to_dec(init_number):
-#     dec_number = 0
+def check_char_number_validity(char):
+    return char in hex_number_valid_chars
+
+def is_a_valid_number(chain): 
+    i = 0
+    is_a_valid_char = True
+    while is_a_valid_char == True and i <= len(chain) - 1:
+        is_a_valid_char = check_char_number_validity(chain[i])
+        i = i + 1
+    return is_a_valid_char
 
 
-#     for i in range(len(init_number)):
-#         bit = int(init_number[len(init_number) - 1 - i])  # On parcourt la chaîne de droite à gauche
-#         dec_number = dec_number + bit * (2 ** i)  # Ajoute la valeur décimale correspondante
+def is_a_valid_base(chain):
+    return chain in base 
 
-#     return dec_number
 
-# # Exemple d'utilisation
-# nombre_binaire = "11111111"
-# nombre_decimal = bin_to_dec(nombre_binaire)
-# print(f"Le nombre binaire {nombre_binaire} en décimal est : {nombre_decimal}")
+def is_bin(chain):
+    return chain in is_bin_writing
+
+def is_dec(chain):
+    return chain in is_dec_writing
+
+def is_hex(chain):
+    return chain in is_hex_writing
