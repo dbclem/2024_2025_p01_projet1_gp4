@@ -2,6 +2,10 @@ from data import*
 
 
 def transforme_hex_number_to_dec_numbers (hex_number) : 
+    """
+            transformation des nombres hexadecimaux en une liste de nombre decimaux 
+            Pour facilité la convertion en decimal 
+    """
     hex_number_transformed_in_liste = []
     for i  in hex_number : 
         if i in "0123456789" : 

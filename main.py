@@ -10,7 +10,7 @@ def dec_to_hex (init_number):
         point_hex_char = init_number % 16
         hex_number = hex_chars[point_hex_char] + hex_number
         init_number = init_number // 16
-    return hex_number#--> marche 
+    return hex_number
 
 def dec_to_bin(init_number):
     bin_number = ""
@@ -18,17 +18,17 @@ def dec_to_bin(init_number):
         reste = init_number % 2
         bin_number = str(reste) + bin_number
         init_number = init_number // 2
-    return bin_number #--> marche
+    return bin_number
 
 def bin_to_dec(init_number):
     dec_number = 0
     for i in range(len(init_number)):
         bin_number = int(init_number[len(init_number) - 1 - i])  
         dec_number = dec_number + bin_number * (2 ** i)  
-    return dec_number#--> marche
+    return dec_number
 
 def bin_to_hex (init_number) : 
-    return dec_to_hex(bin_to_dec(init_number)) #--> marche 
+    return dec_to_hex(bin_to_dec(init_number))
 
 def hex_to_dec (init_number):
     dec_number = 0 
@@ -36,11 +36,10 @@ def hex_to_dec (init_number):
     for num in range(len(hex_in_dec_chars)):
         hex_number = int(hex_in_dec_chars[len(hex_in_dec_chars) - 1 - num])  
         dec_number = dec_number + hex_number * (16 ** num)
-    return dec_number#--> marche
+    return dec_number
 
 def hex_to_bin (init_number) :
-    return hex_to_dec(dec_to_bin(init_number)) #--> marche
-
+    return hex_to_dec(dec_to_bin(init_number))
 
 def ask_for_the_init_number() : 
     init_number = input(ask_for_init_number_text) 
@@ -49,19 +48,28 @@ def ask_for_the_init_number() :
     return init_number
 
 def ask_for_the_init_base() : 
+    """
+            --> ici on voit a veréfié la validité de la base, mais l'ordi ne la connait
+    """
     init_base = input(ask_for_init_base_text)
     while not (is_a_valid_base(init_base)) == True:
         init_base = input(ask_again_for_init_base_text)
-    return init_base # --> ici on voit a veréfié la validité de la base, mais l'ordi ne la connait
+    return init_base 
 
 def ask_for_the_target_base() :
+    """
+            --> ici on voit a veréfié la validité de la target base, mais l'ordi ne la connait
+    """
     target_base = input(ask_for_target_base_text)
     while not (is_a_valid_base(target_base)) == True:
         target_base = input(ask_again_for_target_base_text)
-    return target_base # --> ici on voit a veréfié la validité de la target base, mais l'ordi ne la connait
+    return target_base  
 
 
-def interpret_init_base (): #interpret l'init_base --> donc savoir si c'est un bin / dec / hex
+def interpret_init_base ():
+    """
+            interpret l'init_base --> donc savoir si c'est un bin / dec / hex
+    """
     init_base_verify = 0
     test_for_init_base = ask_for_the_init_base()
     if is_bin(test_for_init_base) :
@@ -76,7 +84,10 @@ def interpret_init_base (): #interpret l'init_base --> donc savoir si c'est un b
         init_base_verify = 16 
         return init_base_verify 
 
-def interpret_target_base (): #interpret la target_base --> donc savoir si c'est un bin / dec / hex
+def interpret_target_base ():
+    """
+            interpret la target_base --> donc savoir si c'est un bin / dec / hex
+    """
     target_base_verify = 0
     test_for_target_base = ask_for_the_target_base()
     if is_bin(test_for_target_base) :
