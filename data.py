@@ -1,3 +1,4 @@
+
 ask_for_init_number_text = "Entrez le nombre que vous voulez transformer : "
 ask_again_for_init_number_text = "Ce n'est pas un nombre ! " + ask_for_init_number_text
 
@@ -8,6 +9,10 @@ ask_again_for_init_base_text = "Ce n'est pas une base connu, vous devez rentrer 
 ask_for_target_base_text = "Entrez la base que vous voulez viser : "
 ask_again_for_target_base_text = "Ce n'est pas une base connu, vous devez rentrer du binaire, du decimale, ou de l'hexadecimal. \n" + ask_for_target_base_text
 
+restart_question = "Voulez vous transformer un autre nombre ?"
+bye_bye_text = "Merci à bientot pour de nouvelles aventures"
+
+yes_forms = ["oui", "OUI", "Oui", "ouais", "ouaip", "yep", "affirmatif", "c'est ça", "exactement", "bien sûr", "certainement", "absolument", "yes", "YES", "Yes"]
 
 bin_number_valid_chars = ["0", "1"]
 dec_number_valid_chars = bin_number_valid_chars\
