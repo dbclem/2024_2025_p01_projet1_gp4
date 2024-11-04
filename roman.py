@@ -1,4 +1,3 @@
-# from math import*
 
 # def rest_number (n):
 #     return n % 2
@@ -138,13 +137,18 @@ def ask_for_the_init_number() :
 def is_a_valid_base(chain):
     return chain in base 
 
-
+        
 def ask_for_the_init_base() : 
     init_base = input(ask_for_init_base_text)
-    while not (is_a_valid_base(init_base)) == True:
+    while not (is_a_valid_base(init_base)) :
         init_base = input(ask_again_for_init_base_text)
     return init_base # --> ici on voit a veréfié la validité de la base, mais l'ordi ne la connait
 
+def check_comptability_number_base(init_number, init_base) :
+    if init_base == '2' :
+        init_number == ["0", "1"]
+    else :
+        return "votre base n'est pa scompa"
 
 def ask_for_the_target_base() :
     target_base = input(ask_for_target_base_text)
@@ -166,7 +170,7 @@ def interpret_init_base (): #interpret l'init_base --> donc savoir si c'est un b
     init_base_verify = 0
     test_for_init_base = ask_for_the_init_base()
     if is_bin(test_for_init_base) :
-        init_base_verify = 2
+        init_base_verify = 2 
         return init_base_verify
     
     elif is_dec(test_for_init_base):
