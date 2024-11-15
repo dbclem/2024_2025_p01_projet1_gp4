@@ -130,5 +130,16 @@ def do_the_job ():
     print(f"Le nombre {init_number} en base {init_base} est {target_number} en base {target_base} !")
 
 
-do_the_job()
 
+def repeat () :
+    while True :
+        do_the_job()
+        retry = input(restart_question)
+        if retry in yes_forms : 
+            do_the_job()
+        else : 
+            print(bye_bye_text)
+            return False 
+
+
+repeat()
